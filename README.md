@@ -22,4 +22,4 @@ ITESM representatives
 Ing. Martha Sordia Salinas <msordia@itesm.mx>
 Ing. Mario Isidro de la Fuente Martínez<mario.delafuente@itesm.mx>
 ITESM students
-nombre_alumno <ariana.cisneros@live.com>
+Ariana Cisneros Garza <ariana.cisneros@live.com>
