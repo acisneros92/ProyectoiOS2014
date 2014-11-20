@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="8YX-ce-x5E">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="8YX-ce-x5E">
     <dependencies>
         <deployment version="1808" identifier="iOS"/>
         <development version="5100" identifier="xcode"/>
@@ -178,11 +178,11 @@
             </objects>
             <point key="canvasLocation" x="1562" y="490"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Favoritos-->
         <scene sceneID="lC5-JH-L0f">
             <objects>
                 <navigationController definesPresentationContext="YES" id="MxR-rH-2nb" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="favorites" id="qAG-ve-uRl"/>
+                    <tabBarItem key="tabBarItem" title="Favoritos" image="favorito.png" id="qAG-ve-uRl"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Ibs-QH-72Y">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -240,11 +240,11 @@
             </objects>
             <point key="canvasLocation" x="1566" y="-216"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Buscar-->
         <scene sceneID="7ml-q8-kiu">
             <objects>
                 <navigationController definesPresentationContext="YES" id="SlU-16-JQD" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" selectedImage="first" systemItem="search" id="8Y7-SS-AMd"/>
+                    <tabBarItem key="tabBarItem" title="Buscar" image="buscar.png" id="8Y7-SS-AMd"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="nVj-yn-xBD">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -258,7 +258,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="first" width="30" height="30"/>
+        <image name="buscar.png" width="32" height="32"/>
+        <image name="favorito.png" width="32" height="32"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

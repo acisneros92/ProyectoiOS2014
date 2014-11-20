@@ -29,6 +29,8 @@
 		3AB9D3111A1955F300EFA6F5 /* Restaurante.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AB9D3101A1955F300EFA6F5 /* Restaurante.m */; };
 		FB0969231A154A01002C6DDD /* BrowseMasterViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = FB0969221A154A01002C6DDD /* BrowseMasterViewController2.m */; };
 		FB0969251A154A88002C6DDD /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB0969241A154A88002C6DDD /* MapKit.framework */; };
+		FD2502B81A1E89E900C17CB4 /* favorito.png in Resources */ = {isa = PBXBuildFile; fileRef = FD2502B71A1E89E900C17CB4 /* favorito.png */; };
+		FD2502BA1A1E8A2B00C17CB4 /* buscar.png in Resources */ = {isa = PBXBuildFile; fileRef = FD2502B91A1E8A2B00C17CB4 /* buscar.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +77,8 @@
 		FB0969211A154A01002C6DDD /* BrowseMasterViewController2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrowseMasterViewController2.h; sourceTree = "<group>"; };
 		FB0969221A154A01002C6DDD /* BrowseMasterViewController2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrowseMasterViewController2.m; sourceTree = "<group>"; };
 		FB0969241A154A88002C6DDD /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		FD2502B71A1E89E900C17CB4 /* favorito.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = favorito.png; sourceTree = "<group>"; };
+		FD2502B91A1E8A2B00C17CB4 /* buscar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = buscar.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +140,8 @@
 		3A344E6D1A09E01A00B73F98 /* FindFood */ = {
 			isa = PBXGroup;
 			children = (
+				FD2502B91A1E8A2B00C17CB4 /* buscar.png */,
+				FD2502B71A1E89E900C17CB4 /* favorito.png */,
 				3A344E761A09E01A00B73F98 /* AppDelegate.h */,
 				3A344E771A09E01A00B73F98 /* AppDelegate.m */,
 				3A344E791A09E01A00B73F98 /* Main.storyboard */,
@@ -266,6 +272,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A344E831A09E01A00B73F98 /* Images.xcassets in Resources */,
+				FD2502BA1A1E8A2B00C17CB4 /* buscar.png in Resources */,
+				FD2502B81A1E89E900C17CB4 /* favorito.png in Resources */,
 				3A344E721A09E01A00B73F98 /* InfoPlist.strings in Resources */,
 				3AA892C71A1976AF001455B8 /* favoritos.plist in Resources */,
 				3A344E7B1A09E01A00B73F98 /* Main.storyboard in Resources */,
