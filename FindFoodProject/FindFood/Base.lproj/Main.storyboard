@@ -178,11 +178,11 @@
             </objects>
             <point key="canvasLocation" x="1562" y="490"/>
         </scene>
-        <!--Item-->
+        <!--Navigation Controller-->
         <scene sceneID="lC5-JH-L0f">
             <objects>
                 <navigationController definesPresentationContext="YES" id="MxR-rH-2nb" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="qAG-ve-uRl"/>
+                    <tabBarItem key="tabBarItem" systemItem="favorites" id="qAG-ve-uRl"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Ibs-QH-72Y">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -240,11 +240,11 @@
             </objects>
             <point key="canvasLocation" x="1566" y="-216"/>
         </scene>
-        <!--Item-->
+        <!--Navigation Controller-->
         <scene sceneID="7ml-q8-kiu">
             <objects>
                 <navigationController definesPresentationContext="YES" id="SlU-16-JQD" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="8Y7-SS-AMd"/>
+                    <tabBarItem key="tabBarItem" selectedImage="first" systemItem="search" id="8Y7-SS-AMd"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="nVj-yn-xBD">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -257,6 +257,9 @@
             <point key="canvasLocation" x="590" y="-218"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="first" width="30" height="30"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
