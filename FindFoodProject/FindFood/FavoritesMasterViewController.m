@@ -112,13 +112,13 @@
     // The results are likely to be shown to a user
     // Note the use of the localizedCaseInsensitiveCompare: selector
     
-    NSSortDescriptor *firstDescriptor =
-    [[NSSortDescriptor alloc] initWithKey:@"nombre"
-                                ascending:YES
-                                 selector:@selector(localizedCaseInsensitiveCompare:)];
+    //NSSortDescriptor *firstDescriptor =
+    //[[NSSortDescriptor alloc] initWithKey:@"nombre"
+    //                            ascending:YES
+    //                             selector:@selector(localizedCaseInsensitiveCompare:)];
     
-    NSArray *descriptors = [NSArray arrayWithObjects:firstDescriptor, nil];
-    self.objetoSingleton.arregloSingleton = (NSMutableArray*)[self.objetoSingleton.arregloSingleton sortedArrayUsingDescriptors:descriptors];
+    //NSArray *descriptors = [NSArray arrayWithObjects:firstDescriptor, nil];
+    //self.objetoSingleton.arregloSingleton = (NSMutableArray*)[self.objetoSingleton.arregloSingleton sortedArrayUsingDescriptors:descriptors];
     
 }
 
@@ -129,11 +129,44 @@
 
 
 
+-(BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    return YES;
+}
+
+
+
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        [_objects removeObjectAtIndex:indexPath.row];
+        
+        
+        
+        
+        [self.objetoSingleton.arregloSingleton removeObjectAtIndex:indexPath.row];
+        
+        
+        
+        
+        NSString *plistPath = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0]stringByAppendingPathComponent:@"favoritos.plist"];
+        
+        
+        id plist = [NSPropertyListSerialization dataFromPropertyList:(id)self.objetoSingleton.arregloSingleton
+                                                              format:NSPropertyListXMLFormat_v1_0 errorDescription:nil];
+        [plist writeToFile:plistPath atomically:YES];
+        
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     } else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
     }

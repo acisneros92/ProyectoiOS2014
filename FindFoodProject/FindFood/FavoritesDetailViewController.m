@@ -33,7 +33,33 @@
         self.detailDescriptionLabel.text = [self.detailItem objectForKey:@"nombre"];
         self.direccion.text = [self.detailItem objectForKey:@"direccion"];
     }
+    
+    NSString *latA = [self.detailItem objectForKey:@"latitud"];
+    NSString *latB = [self.detailItem objectForKey:@"longitud"];
+    
+    CLLocationCoordinate2D zoomLocation;
+    zoomLocation.latitude = [latA doubleValue];
+    zoomLocation.longitude = [latB doubleValue];
+    
+    MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(zoomLocation, 500, 500);
+    
+    // 3
+    [_mapView setRegion:viewRegion animated:YES];
+    
+    MKPointAnnotation *point = [[MKPointAnnotation alloc] init];
+    point.coordinate = zoomLocation;
+    point.title = [self.detailItem objectForKey:@"nombre"];
+    
+    [self.mapView addAnnotation:point];
+    
 }
+
+- (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation
+{
+    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(userLocation.coordinate, 800, 800);
+    [self.mapView setRegion:[self.mapView regionThatFits:region] animated:YES];
+}
+
 
 - (void)viewDidLoad
 {
@@ -61,4 +87,20 @@
 
 
 
+- (IBAction)shareFB:(id)sender {
+    
+    if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook]) {
+        SLComposeViewController *facebookController = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
+        
+        [facebookController setInitialText:[NSString stringWithFormat:@"Estoy en %@",[self.detailItem objectForKey:@"nombre"]]];
+        
+        [self presentViewController:facebookController animated:YES completion:nil];
+    } else {
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Facebook error" message:@"you may not have facebook set up or\nyou may not be connected to the internet. \n please check..." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alertView show];
+    }
+    
+    
+    
+}
 @end

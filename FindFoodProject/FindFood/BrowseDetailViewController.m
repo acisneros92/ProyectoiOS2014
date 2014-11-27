@@ -34,6 +34,34 @@
         self.detailDescriptionLabel.text = [[self.detailItem objectForKey:@"venue"] objectForKey:@"name"];
         self.direccion.text =[[[self.detailItem objectForKey:@"venue"] objectForKey:@"location"] objectForKey:@"address"];
     }
+    
+    NSString *latA = [[[self.detailItem objectForKey:@"venue"] objectForKey:@"location"] objectForKey:@"lat"];
+    NSString *latB = [[[self.detailItem objectForKey:@"venue"] objectForKey:@"location"] objectForKey:@"lng"];
+    
+    CLLocationCoordinate2D zoomLocation;
+    zoomLocation.latitude = [latA doubleValue];
+    zoomLocation.longitude = [latB doubleValue];
+    
+    MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(zoomLocation, 500, 500);
+    
+    // 3
+    [_mapView setRegion:viewRegion animated:YES];
+    
+    MKPointAnnotation *point = [[MKPointAnnotation alloc] init];
+    point.coordinate = zoomLocation;
+    point.title = [[self.detailItem objectForKey:@"venue"] objectForKey:@"name"];
+    
+    [self.mapView addAnnotation:point];
+    
+    
+    
+}
+
+
+- (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation
+{
+    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(userLocation.coordinate, 800, 800);
+    [self.mapView setRegion:[self.mapView regionThatFits:region] animated:YES];
 }
 
 

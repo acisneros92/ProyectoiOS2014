@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MapKit/MapKit.h>
 #import "Restaurante.h"
 #import <CoreLocation/CoreLocation.h>
 #import "Singleton.h"
@@ -19,6 +20,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *detailDescriptionLabel;
 @property (strong, nonatomic) IBOutlet UILabel *direccion;
 - (IBAction)agregarFavorito:(id)sender;
+@property (strong, nonatomic) IBOutlet MKMapView *mapView;
 
 @end
 

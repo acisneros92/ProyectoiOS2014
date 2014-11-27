@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MapKit/MapKit.h>
 #import <CoreLocation/CoreLocation.h>
 #import "Restaurante.h"
 
@@ -21,5 +22,6 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *table;
 - (IBAction)refresh:(id)sender;
+@property (strong, nonatomic) IBOutlet MKMapView *browseMap;
 
 @end

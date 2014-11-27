@@ -74,8 +74,24 @@
     
     self.responseData =[[NSMutableData alloc] init ];
     [self.loading startAnimating];
-
     
+    CLLocationCoordinate2D zoomLocation;
+    zoomLocation.latitude = 25.6500973;
+    zoomLocation.longitude = -100.2888395;
+
+    MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(zoomLocation, 500, 500);
+    
+    // 3
+    [_browseMap setRegion:viewRegion animated:YES];
+    
+    
+}
+
+
+- (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation
+{
+    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(userLocation.coordinate, 800, 800);
+    [self.browseMap setRegion:[self.browseMap regionThatFits:region] animated:YES];
 }
 
 - (void)didReceiveMemoryWarning
@@ -217,6 +233,16 @@
     //Preparar variable que recibe cualquier tipo de dato del servidor.
     
     self.responseData =[[NSMutableData alloc] init ];
+    
+    
+    CLLocationCoordinate2D zoomLocation;
+    zoomLocation.latitude = self.locationManager.location.coordinate.latitude;
+    zoomLocation.longitude = self.locationManager.location.coordinate.longitude;
+    
+    MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(zoomLocation, 500, 500);
+    
+    // 3
+    [_browseMap setRegion:viewRegion animated:YES];
     
 }
 @end
