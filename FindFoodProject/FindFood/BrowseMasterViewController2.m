@@ -53,6 +53,15 @@
     self.locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters; // 100 m
     [self.locationManager startUpdatingLocation];
     
+    [self setObjetoSingleton:[Singleton getSharedInstance]];
+    // app bundle
+    NSArray *directories = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documents = [directories firstObject];
+    NSString *path = [documents stringByAppendingPathComponent:@"configuracion.plist"];
+    //carga datos del archivo plist
+    self.objetoSingleton.arregloSingletonConfiguracion = [NSMutableArray arrayWithContentsOfFile:path];
+    
+    
     //Formar el URL
     NSString *url = [[NSString alloc] initWithFormat:@"https://api.foursquare.com/v2/venues/explore?client_id=0ZDHG1EQAYRFNSEMFWIP1BDLWIMET21K3J5ZBEB5IAKCZRTZ&client_secret=G0Z3L1Q3PFBJL2KRQ0FQHGC2G05JSPOTGNSGVDNJM20F3T0Y&v=20130815&ll=25.6500973,-100.2888395&radius=200&section=food"];
     
@@ -84,6 +93,7 @@
     // 3
     [_browseMap setRegion:viewRegion animated:YES];
     
+    [self loadRest];
     
 }
 
@@ -131,7 +141,7 @@
     NSDictionary *response = [datos objectForKey:@"response"] ;
     restaurantes = [[[response objectForKey:@"groups"] objectAtIndex:0] objectForKey:@"items"];
     //    restaurante= [[[[[response objectForKey:@"groups"] objectAtIndex:0] objectForKey:@"items"] objectAtIndex:0] objectForKey:@"venue"];
-    
+    [self loadRest];
     NSLog(@"count %i",restaurantes.count);
     //Identificar si existen elementos o no como respuesta del servidor
     if (restaurantes.count == 0) {
@@ -143,6 +153,9 @@
         
         //Se redibuja la tabla ya que los datos de las celdas fueron actualizados
         [self.table reloadData];
+        
+        
+        
         
     }
     
@@ -161,7 +174,33 @@
 }
 
 
-
+-(void)loadRest {
+    
+    CLLocationCoordinate2D zoomLocation;
+    
+    
+    NSString *latt;
+    NSString *lngg;
+    
+    
+    for (int i = 0; i < restaurantes.count; i++) {
+        
+        latt = [[[restaurantes[i] objectForKey:@"venue"] objectForKey:@"location"] objectForKey:@"lat"];
+        lngg = [[[restaurantes[i] objectForKey:@"venue"] objectForKey:@"location"] objectForKey:@"lng"];
+        
+        zoomLocation.latitude = [latt doubleValue];
+        zoomLocation.longitude = [lngg doubleValue];
+        
+        MKPointAnnotation *point = [[MKPointAnnotation alloc] init];
+        point.coordinate = zoomLocation;
+        point.title = [[restaurantes[i] objectForKey:@"venue"] objectForKey:@"name"];
+        
+        [self.browseMap addAnnotation:point];
+        
+        
+    }
+    
+}
 
 #pragma mark - Table view data source
 
@@ -187,8 +226,12 @@
     cell.titulo.text = [[object objectForKey:@"venue"] objectForKey:@"name"];
     //cell.subtitulo.text = [[[object objectForKey:@"venue"] objectForKey:@"location"] objectForKey:@"city"];
     
-    NSString *str = [NSString stringWithFormat:@"%@ m",[[[object objectForKey:@"venue"] objectForKey:@"location"] objectForKey:@"distance"]];
+    
+    
+    
+    NSString *str = [NSString stringWithFormat:@"%@ m    %@",[[[object objectForKey:@"venue"] objectForKey:@"location"] objectForKey:@"distance"], [[[[object objectForKey:@"venue"] objectForKey:@"categories"] objectAtIndex:0] objectForKey:@"name"]];
     cell.subtitulo.text = str;
+
     
     return cell;
 }
@@ -216,7 +259,20 @@
     //Formar el URL
     //NSString *url = [[NSString alloc] initWithFormat:@"https://api.foursquare.com/v2/venues/explore?client_id=0ZDHG1EQAYRFNSEMFWIP1BDLWIMET21K3J5ZBEB5IAKCZRTZ&client_secret=G0Z3L1Q3PFBJL2KRQ0FQHGC2G05JSPOTGNSGVDNJM20F3T0Y&v=20130815&ll=25.6500973,-100.2888395&radius=200&section=food"];
     
-    NSString *url = [NSString stringWithFormat:@"https://api.foursquare.com/v2/venues/explore?client_id=0ZDHG1EQAYRFNSEMFWIP1BDLWIMET21K3J5ZBEB5IAKCZRTZ&client_secret=G0Z3L1Q3PFBJL2KRQ0FQHGC2G05JSPOTGNSGVDNJM20F3T0Y&v=20130815&ll=%f,%f&radius=200&section=food", self.locationManager.location.coordinate.latitude, self.locationManager.location.coordinate.longitude];
+    
+    NSString *radio;
+    NSString *radio2;
+    
+    if(self.objetoSingleton.arregloSingletonConfiguracion.count > 0) {
+        radio2 = [self.objetoSingleton.arregloSingletonConfiguracion objectAtIndex:0];
+        radio = [radio2 stringByReplacingOccurrencesOfString:@" m" withString:@""];
+    }
+    else {
+        radio = @"200";
+    }
+    
+    
+    NSString *url = [NSString stringWithFormat:@"https://api.foursquare.com/v2/venues/explore?client_id=0ZDHG1EQAYRFNSEMFWIP1BDLWIMET21K3J5ZBEB5IAKCZRTZ&client_secret=G0Z3L1Q3PFBJL2KRQ0FQHGC2G05JSPOTGNSGVDNJM20F3T0Y&v=20130815&ll=%f,%f&radius=%@&section=food", self.locationManager.location.coordinate.latitude, self.locationManager.location.coordinate.longitude, radio];
     
     
     //Realizar request al URL
@@ -244,5 +300,14 @@
     // 3
     [_browseMap setRegion:viewRegion animated:YES];
     
+    
+    
+    
 }
+
+
+
+
+
+
 @end

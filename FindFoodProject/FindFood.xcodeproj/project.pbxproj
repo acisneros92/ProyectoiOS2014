@@ -27,10 +27,13 @@
 		3AA892C71A1976AF001455B8 /* favoritos.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3AA892C61A1976AF001455B8 /* favoritos.plist */; };
 		3AA892CA1A19787B001455B8 /* Singleton.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AA892C91A19787B001455B8 /* Singleton.m */; };
 		3AB9D3111A1955F300EFA6F5 /* Restaurante.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AB9D3101A1955F300EFA6F5 /* Restaurante.m */; };
+		3ADBB6F91A2D564D00553E75 /* rest.png in Resources */ = {isa = PBXBuildFile; fileRef = 3ADBB6F81A2D564D00553E75 /* rest.png */; };
+		3ADBB6FB1A2D565100553E75 /* conf.png in Resources */ = {isa = PBXBuildFile; fileRef = 3ADBB6FA1A2D565100553E75 /* conf.png */; };
 		FB0969231A154A01002C6DDD /* BrowseMasterViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = FB0969221A154A01002C6DDD /* BrowseMasterViewController2.m */; };
 		FB0969251A154A88002C6DDD /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB0969241A154A88002C6DDD /* MapKit.framework */; };
 		FD2502B81A1E89E900C17CB4 /* favorito.png in Resources */ = {isa = PBXBuildFile; fileRef = FD2502B71A1E89E900C17CB4 /* favorito.png */; };
 		FD2502BA1A1E8A2B00C17CB4 /* buscar.png in Resources */ = {isa = PBXBuildFile; fileRef = FD2502B91A1E8A2B00C17CB4 /* buscar.png */; };
+		FD3644A31A2CB6E8004D4786 /* ConfiguracionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD3644A21A2CB6E8004D4786 /* ConfiguracionViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,11 +77,15 @@
 		3AA892C91A19787B001455B8 /* Singleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Singleton.m; sourceTree = "<group>"; };
 		3AB9D30F1A1955F300EFA6F5 /* Restaurante.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Restaurante.h; sourceTree = "<group>"; };
 		3AB9D3101A1955F300EFA6F5 /* Restaurante.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Restaurante.m; sourceTree = "<group>"; };
+		3ADBB6F81A2D564D00553E75 /* rest.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rest.png; sourceTree = "<group>"; };
+		3ADBB6FA1A2D565100553E75 /* conf.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = conf.png; sourceTree = "<group>"; };
 		FB0969211A154A01002C6DDD /* BrowseMasterViewController2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrowseMasterViewController2.h; sourceTree = "<group>"; };
 		FB0969221A154A01002C6DDD /* BrowseMasterViewController2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrowseMasterViewController2.m; sourceTree = "<group>"; };
 		FB0969241A154A88002C6DDD /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		FD2502B71A1E89E900C17CB4 /* favorito.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = favorito.png; sourceTree = "<group>"; };
 		FD2502B91A1E8A2B00C17CB4 /* buscar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = buscar.png; sourceTree = "<group>"; };
+		FD3644A11A2CB6E8004D4786 /* ConfiguracionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfiguracionViewController.h; sourceTree = "<group>"; };
+		FD3644A21A2CB6E8004D4786 /* ConfiguracionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfiguracionViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +116,8 @@
 		3A344E5B1A09E01A00B73F98 = {
 			isa = PBXGroup;
 			children = (
+				FD3644A11A2CB6E8004D4786 /* ConfiguracionViewController.h */,
+				FD3644A21A2CB6E8004D4786 /* ConfiguracionViewController.m */,
 				3A344E6D1A09E01A00B73F98 /* FindFood */,
 				3A344E8F1A09E01A00B73F98 /* FindFoodTests */,
 				3A344E661A09E01A00B73F98 /* Frameworks */,
@@ -141,6 +150,8 @@
 			isa = PBXGroup;
 			children = (
 				FD2502B91A1E8A2B00C17CB4 /* buscar.png */,
+				3ADBB6FA1A2D565100553E75 /* conf.png */,
+				3ADBB6F81A2D564D00553E75 /* rest.png */,
 				FD2502B71A1E89E900C17CB4 /* favorito.png */,
 				3A344E761A09E01A00B73F98 /* AppDelegate.h */,
 				3A344E771A09E01A00B73F98 /* AppDelegate.m */,
@@ -272,8 +283,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A344E831A09E01A00B73F98 /* Images.xcassets in Resources */,
+				3ADBB6FB1A2D565100553E75 /* conf.png in Resources */,
 				FD2502BA1A1E8A2B00C17CB4 /* buscar.png in Resources */,
 				FD2502B81A1E89E900C17CB4 /* favorito.png in Resources */,
+				3ADBB6F91A2D564D00553E75 /* rest.png in Resources */,
 				3A344E721A09E01A00B73F98 /* InfoPlist.strings in Resources */,
 				3AA892C71A1976AF001455B8 /* favoritos.plist in Resources */,
 				3A344E7B1A09E01A00B73F98 /* Main.storyboard in Resources */,
@@ -299,6 +312,7 @@
 				3A344E741A09E01A00B73F98 /* main.m in Sources */,
 				3A344EA41A09E14400B73F98 /* BrowseDetailViewController.m in Sources */,
 				3A344EAA1A09E59F00B73F98 /* FavoritesMasterViewController.m in Sources */,
+				FD3644A31A2CB6E8004D4786 /* ConfiguracionViewController.m in Sources */,
 				3A344EA71A09E58E00B73F98 /* FavoritesDetailViewController.m in Sources */,
 				3A344EAD1A09EB5200B73F98 /* Celda.m in Sources */,
 				3AA892CA1A19787B001455B8 /* Singleton.m in Sources */,

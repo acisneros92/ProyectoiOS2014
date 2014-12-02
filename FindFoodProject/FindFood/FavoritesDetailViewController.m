@@ -46,6 +46,7 @@
     // 3
     [_mapView setRegion:viewRegion animated:YES];
     
+    self.mapView.showsUserLocation = YES;
     MKPointAnnotation *point = [[MKPointAnnotation alloc] init];
     point.coordinate = zoomLocation;
     point.title = [self.detailItem objectForKey:@"nombre"];

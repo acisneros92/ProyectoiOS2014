@@ -10,10 +10,11 @@
 #import <MapKit/MapKit.h>
 #import <CoreLocation/CoreLocation.h>
 #import "Restaurante.h"
+#import "Singleton.h"
 
 @interface BrowseMasterViewController2 : UIViewController <UITableViewDataSource, UITableViewDelegate, NSURLConnectionDataDelegate, NSURLConnectionDelegate>
 
-
+@property (strong,nonatomic) Singleton *objetoSingleton;
 @property (strong,nonatomic) UIActivityIndicatorView *loading;
 @property (strong,nonatomic) NSMutableData *responseData;
 @property (strong,nonatomic) NSURLConnection *connection;
@@ -23,5 +24,8 @@
 @property (weak, nonatomic) IBOutlet UITableView *table;
 - (IBAction)refresh:(id)sender;
 @property (strong, nonatomic) IBOutlet MKMapView *browseMap;
+
+
+
 
 @end

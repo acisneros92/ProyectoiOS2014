@@ -26,12 +26,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FindFood/BrowseMasterViewController2.m"
-            timestampString = "438762910.960103"
+            timestampString = "439184587.112211"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "187"
-            endingLineNumber = "187"
-            landmarkName = "-tableView:cellForRowAtIndexPath:"
+            startingLineNumber = "217"
+            endingLineNumber = "217"
+            landmarkName = "-tableView:numberOfRowsInSection:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -90,7 +90,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FindFood/BrowseDetailViewController.m"
-            timestampString = "438757610.587426"
+            timestampString = "439179993.36024"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "38"
@@ -122,11 +122,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FindFood/BrowseDetailViewController.m"
-            timestampString = "438762910.960103"
+            timestampString = "439187311.190398"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "96"
-            endingLineNumber = "96"
+            startingLineNumber = "116"
+            endingLineNumber = "116"
             landmarkName = "-agregarFavorito:"
             landmarkType = "5">
          </BreakpointContent>
@@ -138,11 +138,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FindFood/BrowseDetailViewController.m"
-            timestampString = "438762910.960103"
+            timestampString = "439187311.190398"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "99"
-            endingLineNumber = "99"
+            startingLineNumber = "119"
+            endingLineNumber = "119"
             landmarkName = "-agregarFavorito:"
             landmarkType = "5">
          </BreakpointContent>
@@ -159,7 +159,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "72"
             endingLineNumber = "72"
-            landmarkName = "-agregarAlArreglo:"
+            landmarkName = "-crearArregloConfiguracion"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -175,7 +175,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "71"
             endingLineNumber = "71"
-            landmarkName = "-agregarAlArreglo:"
+            landmarkName = "-crearArregloConfiguracion"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -186,11 +186,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FindFood/BrowseDetailViewController.m"
-            timestampString = "438762910.960103"
+            timestampString = "439187311.190398"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "100"
-            endingLineNumber = "100"
+            startingLineNumber = "120"
+            endingLineNumber = "120"
             landmarkName = "-agregarFavorito:"
             landmarkType = "5">
          </BreakpointContent>
@@ -202,11 +202,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FindFood/BrowseDetailViewController.m"
-            timestampString = "438762910.960103"
+            timestampString = "439187311.190398"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "98"
-            endingLineNumber = "98"
+            startingLineNumber = "118"
+            endingLineNumber = "118"
             landmarkName = "-agregarFavorito:"
             landmarkType = "5">
          </BreakpointContent>
@@ -239,7 +239,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "18"
             endingLineNumber = "18"
-            landmarkName = "responseData"
+            landmarkName = "loading"
             landmarkType = "19">
          </BreakpointContent>
       </BreakpointProxy>
@@ -287,7 +287,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "79"
             endingLineNumber = "79"
-            landmarkName = "-agregarAlArreglo:"
+            landmarkName = "-crearArregloConfiguracion"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

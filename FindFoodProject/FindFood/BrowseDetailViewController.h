@@ -21,6 +21,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *direccion;
 - (IBAction)agregarFavorito:(id)sender;
 @property (strong, nonatomic) IBOutlet MKMapView *mapView;
+@property (strong, nonatomic) IBOutlet UIWebView *webView;
 
 @end
 

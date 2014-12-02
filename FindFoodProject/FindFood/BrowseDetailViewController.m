@@ -47,11 +47,14 @@
     // 3
     [_mapView setRegion:viewRegion animated:YES];
     
+    self.mapView.showsUserLocation = YES;
+    
     MKPointAnnotation *point = [[MKPointAnnotation alloc] init];
     point.coordinate = zoomLocation;
     point.title = [[self.detailItem objectForKey:@"venue"] objectForKey:@"name"];
     
     [self.mapView addAnnotation:point];
+    
     
     
     
@@ -73,6 +76,23 @@
     [self setObjetoSingleton:[Singleton getSharedInstance]];
     [self.objetoSingleton crearArreglo];
     [self configureView];
+    
+    if([[[self.detailItem objectForKey:@"venue"] objectForKey:@"categories"] objectAtIndex:0 ]){
+    
+        NSString *urlA = @"http://";
+        NSString *urlB = [[[[self.detailItem objectForKey:@"venue"] objectForKey:@"categories"] objectAtIndex:0] objectForKey:@"name"];
+        NSString *urlC = @".jpg.to";
+        
+        NSString *urlB1 = [urlB stringByReplacingOccurrencesOfString:@" " withString:@"_"];
+        
+        NSString *urli = [urlA stringByAppendingString:urlB1];
+        NSString *url1 = [urli stringByAppendingString:urlC];
+        
+        NSURL *url = [NSURL URLWithString:url1];
+        NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
+        [_webView loadRequest:requestObj];
+    }
+
 }
 
 - (void)didReceiveMemoryWarning

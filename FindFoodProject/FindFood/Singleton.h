@@ -14,10 +14,13 @@
 -(void) clear;
 
 @property (strong,nonatomic) NSMutableArray *arregloSingleton;
+@property (strong,nonatomic) NSMutableArray *arregloSingletonConfiguracion;
 
 +(Singleton *) getSharedInstance;
 -(void) crearArreglo;
+-(void)crearArregloConfiguracion;
 -(void) agregarAlArreglo: (Restaurante*) rest;
+-(void) agregarAlArregloConfiguracion:(NSString*) distancia;
 
 //-(void)guardarArchivo;
 @end

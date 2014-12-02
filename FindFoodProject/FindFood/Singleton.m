@@ -62,6 +62,24 @@
 }
 
 
+-(void)crearArregloConfiguracion
+{
+    
+    NSString *paths = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0] stringByAppendingPathComponent:@"configuracion.plist"];
+    
+    if(self.arregloSingleton == nil){
+        
+        self.arregloSingleton = [NSMutableArray arrayWithContentsOfFile:paths];
+        
+    }
+    //REVISAR si es nuloi entonces inicializa
+    if(self.arregloSingleton == nil){
+        self.arregloSingleton = [[NSMutableArray alloc] init];
+    }
+    
+}
+
+
 -(void) agregarAlArreglo:(Restaurante*) resta
 {
     
@@ -98,6 +116,29 @@
     
     
 }
+
+
+
+-(void) agregarAlArregloConfiguracion:(NSString*) distancia
+{
+    
+  // NSDictionary *rest = [[NSDictionary alloc] initWithObjectsAndKeys:distancia.text, @"nombre", resta.direccion, @"direccion", resta.latitud, @"latitud", resta.longitud, @"longitud", nil];
+
+        [self.arregloSingletonConfiguracion insertObject:distancia atIndex:0];
+        
+        [self errorAlert:@"Configuración guardada."];
+
+    
+    NSString *plistPath = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0]stringByAppendingPathComponent:@"configuracion.plist"];
+    
+    
+    id plist = [NSPropertyListSerialization dataFromPropertyList:(id)self.arregloSingleton
+                                                          format:NSPropertyListXMLFormat_v1_0 errorDescription:nil];
+    [plist writeToFile:plistPath atomically:YES];
+    
+    
+}
+
 
 -(void) errorAlert:(NSString*) error {
     UIAlertView *alerta = [[UIAlertView alloc] initWithTitle:@"Alerta"
